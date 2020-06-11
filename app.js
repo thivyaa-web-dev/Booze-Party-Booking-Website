@@ -17,6 +17,8 @@ app.use(require('express-session')({
     saveUninitialized:false
 }))
 
+var port = process.env.PORT || 3000
+
 
 app.use(methodOverride('_method'));
 app.use(passport.initialize());
@@ -270,6 +272,6 @@ app.delete('/party/:id', function (req, res){
 
 
 
-app.listen(3000,function(){ 
+app.listen(port,function(){ 
     console.log('The server is listening...')
 })
